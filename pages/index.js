@@ -63,7 +63,8 @@ function Titulo(props) {
 export default function PaginaInicial() {
     /* const username = 'aarthurssl'; */
     const [username,setUsername] = React.useState('aarthurssl');
-  
+    const roteamento = useRouter();
+    console.log(roteamento);
     return (
       <>
         <GlobalStyle />
@@ -95,7 +96,8 @@ export default function PaginaInicial() {
               as="form" onSubmit={function(infEvent){
                   infEvent.preventDefault();
                   console.log("Enviou Form");
-                  window.location.href = '/chat'
+                  //window.location.href = '/chat'
+                  roteamento.push('/chat');
                 }}
               styleSheet={{
                 display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
